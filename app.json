@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "name": "quickreg",
+    "slug": "quickreg",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/logo.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "CFBundleAllowMixedLocalizations": true
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/logo.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "locales": {
+      "en": "./src/i18n/translations/en.json",
+      "no": "./src/i18n/translations/no.json",
+      "nn": "./src/i18n/translations/nn.json",
+      "nb": "./src/i18n/translations/nb.json"
+    },
+    "web": {
+      "favicon": "./assets/logo.png"
+    },
+    "extra": {
+      "supportsRTL": true
+    },
+    "plugins": ["expo-localization", "expo-document-picker"]
+  }
+}

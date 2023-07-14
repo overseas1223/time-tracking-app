@@ -1,0 +1,57 @@
+import * as React from "react";
+import { FAB, Portal, useTheme } from "react-native-paper";
+import { StyleSheet } from "react-native";
+import { i18n } from "../../i18n";
+import { useNavigation } from "@react-navigation/native";
+
+export default function SpeedDialForHome() {
+  const [open, setOpen] = React.useState(false);
+  const navigation = useNavigation();
+  const theme = useTheme();
+
+  const onToggleSpeedDialForHome = () => {
+    setOpen(!open);
+  };
+
+  return (
+    <FAB.Group
+      open={open}
+      color={theme.colors.primary}
+      icon={open ? "close" : "format-list-bulleted"}
+      actions={[
+        {
+          icon: "clock-time-nine",
+          label: i18n.t("hourRegistrations"),
+          onPress: () => navigation.navigate("HourRegistrations"),
+        },
+        {
+          icon: "account-check",
+          label: i18n.t("selfcertfiedHours"),
+          onPress: () => navigation.navigate("SelfcertfiedHours"),
+        },
+        {
+          icon: "emoticon-sick",
+          label: i18n.t("sickLeave"),
+          onPress: () => navigation.navigate("SickLeave"),
+        },
+        {
+          icon: "calendar-clock",
+          label: i18n.t("movableHolidays"),
+          onPress: () => navigation.navigate("MovableHolidays"),
+        },
+      ]}
+      onStateChange={({ open }) => setOpen(open)}
+      onPress={onToggleSpeedDialForHome}
+      style={styles.fab}
+    />
+  );
+}
+
+const styles = StyleSheet.create({
+  fab: {
+    position: "absolute",
+    margin: 0,
+    right: 0,
+    bottom: 0,
+  },
+});
